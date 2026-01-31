@@ -1,0 +1,45 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "unix-debug",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc"
+            }
+        },
+        {
+            "name": "win-debug",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+                "CMAKE_C_COMPILER": "gcc.exe"
+            }
+        },
+        {
+            "name": "unix-release",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc"
+            }
+        },
+        {
+            "name": "win-release",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+                "CMAKE_C_COMPILER": "gcc.exe"
+            }
+        }
+    ]
+}
