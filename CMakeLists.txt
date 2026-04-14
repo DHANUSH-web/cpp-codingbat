@@ -9,7 +9,7 @@ include_directories(lib)
 add_executable(main main.cpp)
 
 # Library target for linking into tests (excludes main())
-add_library(main_lib OBJECT main.cpp)
+add_library(main_lib SHARED main.cpp)
 target_compile_definitions(main_lib PRIVATE TESTING)
 
 # GoogleTest
