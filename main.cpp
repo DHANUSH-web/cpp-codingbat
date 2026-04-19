@@ -54,6 +54,14 @@ const int sum67(std::vector<int> nums)
   return sum;
 }
 
+const bool has22(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size()-1; i++)
+    if (nums.at(i) == 2 && nums.at(i+1) == 2)
+      return true;
+  return false;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";

@@ -95,3 +95,13 @@ TEST(Sum67, CodingBat) {
     EXPECT_EQ(8, sum67(TEST_ARR7));
     EXPECT_EQ(7, sum67(TEST_ARR8));
 }
+
+TEST(Has22, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {1, 2, 2};
+    const std::vector<int> TEST_ARR2 = {1, 2, 1, 2, 7};
+    const std::vector<int> TEST_ARR3 = {1, 1, 2};
+
+    EXPECT_TRUE(has22(TEST_ARR1));
+    EXPECT_FALSE(has22(TEST_ARR2));
+    EXPECT_FALSE(has22(TEST_ARR3));
+}
