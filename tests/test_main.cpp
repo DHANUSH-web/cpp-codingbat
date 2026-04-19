@@ -75,3 +75,23 @@ TEST(TwoAsOne, BPlusCEqualsA) {
 TEST(TwoAsOne, NoneMatch) {
     EXPECT_FALSE(two_as_one(3, 2, 2));
 }
+
+TEST(Sum67, CodingBat) {
+    std::vector<int> TEST_ARR1 = {1, 2, 2};
+    std::vector<int> TEST_ARR2 = {1, 2, 2, 6, 99, 99, 7};
+    std::vector<int> TEST_ARR3 = {1, 1, 6, 7, 2};
+    std::vector<int> TEST_ARR4 = {6, 7, 2};
+    std::vector<int> TEST_ARR5 = {1, 6, 7, 6, 7};
+    std::vector<int> TEST_ARR6 = {1, 6, 7, 2, 6, 99, 7};
+    std::vector<int> TEST_ARR7 = {1, 6, 99, 7, 7};
+    std::vector<int> TEST_ARR8 = {6, 7, 7};
+
+    EXPECT_EQ(5, sum67(TEST_ARR1));
+    EXPECT_EQ(5, sum67(TEST_ARR2));
+    EXPECT_EQ(4, sum67(TEST_ARR3));
+    EXPECT_EQ(2, sum67(TEST_ARR4));
+    EXPECT_EQ(1, sum67(TEST_ARR5));
+    EXPECT_EQ(3, sum67(TEST_ARR6));
+    EXPECT_EQ(8, sum67(TEST_ARR7));
+    EXPECT_EQ(7, sum67(TEST_ARR8));
+}

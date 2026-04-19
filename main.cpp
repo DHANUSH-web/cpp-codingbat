@@ -1,5 +1,7 @@
 #include "main.h"
 #include <iostream>
+#include <string>
+#include <vector>
 
 const int tea_party(const int tea, const int candy) {
   return (tea < 5 || candy < 5)                   ? 0
@@ -33,6 +35,23 @@ const std::string fizz_string2(const int n) {
 
 const bool two_as_one(const int a, const int b, const int c) {
   return a + b == c || a + c == b || b + c == a;
+}
+
+const int sum67(std::vector<int> nums)
+{
+  int sum = 0;
+  bool skip = false;
+
+  std::vector<int>::iterator it;
+
+  for (it = nums.begin(); it != nums.end(); it++)
+  {
+    if (*it == 6) skip = true;
+    else if (*it == 7 && skip) skip = false;
+    else if (!skip) sum += *it;
+  }
+
+  return sum;
 }
 
 #ifndef TESTING
