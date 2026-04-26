@@ -105,3 +105,13 @@ TEST(Has22, CodingBat) {
     EXPECT_FALSE(has22(TEST_ARR2));
     EXPECT_FALSE(has22(TEST_ARR3));
 }
+
+TEST(Lucky13, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {0, 2, 4};
+    const std::vector<int> TEST_ARR2 = {1, 2, 3};
+    const std::vector<int> TEST_ARR3 = {1, 2, 4};
+
+    EXPECT_TRUE(lucky13(TEST_ARR1));
+    EXPECT_FALSE(lucky13(TEST_ARR2));
+    EXPECT_FALSE(lucky13(TEST_ARR3));
+}

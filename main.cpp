@@ -62,6 +62,15 @@ const bool has22(const std::vector<int> nums)
   return false;
 }
 
+const bool lucky13(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size(); i++)
+    if (nums.at(i) == 1 || nums.at(i) == 3)
+      return false;
+
+  return true;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
