@@ -115,3 +115,13 @@ TEST(Lucky13, CodingBat) {
     EXPECT_FALSE(lucky13(TEST_ARR2));
     EXPECT_FALSE(lucky13(TEST_ARR3));
 }
+
+TEST(Sum28, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {2, 3, 2, 2, 4, 2};
+    const std::vector<int> TEST_ARR2 = {2, 3, 2, 2, 4, 2, 2};
+    const std::vector<int> TEST_ARR3 = {1, 2, 3, 4};
+
+    EXPECT_TRUE(sum28(TEST_ARR1));
+    EXPECT_FALSE(sum28(TEST_ARR2));
+    EXPECT_FALSE(sum28(TEST_ARR3));
+}

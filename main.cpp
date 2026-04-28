@@ -71,6 +71,17 @@ const bool lucky13(const std::vector<int> nums)
   return true;
 }
 
+const bool sum28(const std::vector<int> nums)
+{
+  int sum = 0;
+
+  for (int i = 0; i < nums.size(); i++)
+    if (nums.at(i) == 2)
+      sum += nums.at(i);
+
+  return sum == 8;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
