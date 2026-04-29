@@ -14,4 +14,5 @@ const int sum67(std::vector<int> nums);
 const bool has22(const std::vector<int> nums);
 const bool lucky13(const std::vector<int> nums);
 const bool sum28(const std::vector<int> nums);
+const bool more14(const std::vector<int> nums);
 #endif // MAIN_H

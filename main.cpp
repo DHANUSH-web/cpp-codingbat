@@ -82,6 +82,19 @@ const bool sum28(const std::vector<int> nums)
   return sum == 8;
 }
 
+const bool more14(const std::vector<int> nums)
+{
+  int count = 0;
+
+  for (int i = 0; i < nums.size(); i++)
+  {
+    if (nums.at(i) == 1) count++;
+    if (nums.at(i) == 4) count--;
+  }
+
+  return count > 0;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
