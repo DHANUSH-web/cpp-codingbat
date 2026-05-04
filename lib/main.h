@@ -16,4 +16,5 @@ const bool lucky13(const std::vector<int> nums);
 const bool sum28(const std::vector<int> nums);
 const bool more14(const std::vector<int> nums);
 const std::vector<int> fizz_array(const int n);
+const bool only14(const std::vector<int> nums);
 #endif // MAIN_H

@@ -105,6 +105,15 @@ const std::vector<int> fizz_array(const int n)
   return arr;
 }
 
+const bool only14(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size(); i++)
+    if (nums.at(i) != 1 && nums.at(i) != 4)
+      return false;
+
+  return true;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
