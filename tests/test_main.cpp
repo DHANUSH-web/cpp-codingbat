@@ -166,3 +166,24 @@ TEST(Only14, CodingBat) {
     EXPECT_FALSE(only14(TEST_ARR2));
     EXPECT_TRUE(only14(TEST_ARR3));
 }
+
+TEST(FizzArray2, CodingBat) {
+    const std::vector<std::string> TEST1 = fizz_array2(4);
+    const std::vector<std::string> TEST2 = fizz_array2(1);
+    const std::vector<std::string> TEST3 = fizz_array2(10);
+
+    const std::vector<std::string> TEST_ARR1 = {"0", "1", "2", "3", "4"};
+    const std::vector<std::string> TEST_ARR2 = {"0"};
+    const std::vector<std::string> TEST_ARR3 = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
+    // TEST1
+    for (int i = 0; i < 4; i++)
+        EXPECT_EQ(TEST_ARR1.at(i), TEST1.at(i));
+
+    // TEST2
+    EXPECT_EQ(TEST_ARR2.at(0), TEST2.at(0));
+
+    // TEST3
+    for (int i = 0; i < 10; i++)
+        EXPECT_EQ(TEST_ARR3.at(i), TEST3.at(i));
+}

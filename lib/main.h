@@ -17,4 +17,5 @@ const bool sum28(const std::vector<int> nums);
 const bool more14(const std::vector<int> nums);
 const std::vector<int> fizz_array(const int n);
 const bool only14(const std::vector<int> nums);
+const std::vector<std::string> fizz_array2(const int in);
 #endif // MAIN_H

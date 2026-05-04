@@ -114,6 +114,16 @@ const bool only14(const std::vector<int> nums)
   return true;
 }
 
+const std::vector<std::string> fizz_array2(const int n)
+{
+  std::vector<std::string> arr;
+
+  for (int i = 0; i < n; i++)
+    arr.push_back(std::to_string(i));
+
+  return arr;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
