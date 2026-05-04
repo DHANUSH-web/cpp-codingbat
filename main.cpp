@@ -95,6 +95,16 @@ const bool more14(const std::vector<int> nums)
   return count > 0;
 }
 
+const std::vector<int> fizz_array(const int n)
+{
+  std::vector<int> arr;
+
+  for (int i = 0; i < n; i++)
+    arr.push_back(i);
+
+  return arr;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
