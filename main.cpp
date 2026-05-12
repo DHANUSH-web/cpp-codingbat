@@ -1,6 +1,5 @@
 #include "main.h"
 #include <iostream>
-#include <string>
 #include <vector>
 
 const int tea_party(const int tea, const int candy) {
