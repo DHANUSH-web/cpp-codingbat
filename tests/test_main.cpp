@@ -187,3 +187,13 @@ TEST(FizzArray2, CodingBat) {
     for (int i = 0; i < 10; i++)
         EXPECT_EQ(TEST_ARR3.at(i), TEST3.at(i));
 }
+
+TEST(No14, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {1, 2, 3};
+    const std::vector<int> TEST_ARR2 = {1, 2, 3, 4};
+    const std::vector<int> TEST_ARR3 = {2, 3, 4};
+
+    EXPECT_TRUE(no14(TEST_ARR1));
+    EXPECT_FALSE(no14(TEST_ARR2));
+    EXPECT_TRUE(no14(TEST_ARR3));
+}

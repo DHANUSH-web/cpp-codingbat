@@ -123,6 +123,21 @@ const std::vector<std::string> fizz_array2(const int n)
   return arr;
 }
 
+const bool no14(const std::vector<int> nums)
+{
+  bool has1 = false;
+  bool has4 = false;
+
+  for (int i = 0; i < nums.size(); i++)
+  {
+    if (nums.at(i) == 1) has1 = true;
+    if (nums.at(i) == 4) has4 = true;
+    if (has1 && has4) return false;
+  }
+
+  return !(has1 && has4);
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
