@@ -138,6 +138,15 @@ const bool no14(const std::vector<int> nums)
   return !(has1 && has4);
 }
 
+const bool is_everywhere(const std::vector<int> nums, const int val)
+{
+  for (int i = 0; i < nums.size()-1; i++)
+    if (nums.at(i) != val && nums.at(i+1) != val)
+      return false;
+
+  return true;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
