@@ -21,4 +21,5 @@ const std::vector<std::string> fizz_array2(const int in);
 const bool no14(const std::vector<int> nums);
 const bool is_everywhere(const std::vector<int> nums, const int val);
 const bool either24(const std::vector<int> nums);
+const int match_up(const std::vector<int> nums1, const std::vector<int> nums2);
 #endif // MAIN_H

@@ -162,6 +162,17 @@ const bool either24(const std::vector<int> nums)
   return is2 != is4;
 }
 
+const int match_up(const std::vector<int> nums1, const std::vector<int> nums2)
+{
+  int count = 0;
+
+  for (int i = 0; i < nums1.size(); i++)
+    if (nums1.at(i) != nums2.at(i) && std::abs(nums1[i] - nums2[i]) <= 2)
+      count++;
+
+  return count;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";

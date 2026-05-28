@@ -217,3 +217,18 @@ TEST(Either24, CodingBat) {
     EXPECT_TRUE(either24(TEST_ARR2));
     EXPECT_FALSE(either24(TEST_ARR3));
 }
+
+TEST(MatchUp, CodingBat) {
+    const std::vector<int> TEST_ARR11 = {1, 2, 3};
+    const std::vector<int> TEST_ARR12 = {2, 3, 10};
+
+    const std::vector<int> TEST_ARR21 = {1, 2, 3};
+    const std::vector<int> TEST_ARR22 = {2, 3, 5};
+    
+    const std::vector<int> TEST_ARR31 = {1, 2, 3};
+    const std::vector<int> TEST_ARR32 = {2, 3, 3};
+
+    EXPECT_EQ(match_up(TEST_ARR11, TEST_ARR12), 2);
+    EXPECT_EQ(match_up(TEST_ARR21, TEST_ARR22), 3);
+    EXPECT_EQ(match_up(TEST_ARR31, TEST_ARR32), 2);
+}
