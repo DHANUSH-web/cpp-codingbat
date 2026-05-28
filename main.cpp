@@ -147,6 +147,21 @@ const bool is_everywhere(const std::vector<int> nums, const int val)
   return true;
 }
 
+const bool either24(const std::vector<int> nums)
+{
+  bool is2 = false;
+  bool is4 = false;
+
+  for (int i = 0; i < nums.size()-1; i++)
+  {
+    if (is2 && is4) return false;
+    if (nums.at(i) == 2 && nums.at(i+1) == 2) is2 = true;
+    if (nums.at(i) == 4 && nums.at(i+1) == 4) is4 = true;
+  }
+
+  return is2 != is4;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";

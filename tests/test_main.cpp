@@ -207,3 +207,13 @@ TEST(IsEverywhere, CodingBat) {
     EXPECT_FALSE(is_everywhere(TEST_ARR2, 2));
     EXPECT_FALSE(is_everywhere(TEST_ARR3, 1));
 }
+
+TEST(Either24, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {1, 2, 2};
+    const std::vector<int> TEST_ARR2 = {4, 4, 1};
+    const std::vector<int> TEST_ARR3 = {4, 4, 1, 2, 2};
+
+    EXPECT_TRUE(either24(TEST_ARR1));
+    EXPECT_TRUE(either24(TEST_ARR2));
+    EXPECT_FALSE(either24(TEST_ARR3));
+}

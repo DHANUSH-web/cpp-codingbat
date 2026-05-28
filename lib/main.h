@@ -20,4 +20,5 @@ const bool only14(const std::vector<int> nums);
 const std::vector<std::string> fizz_array2(const int in);
 const bool no14(const std::vector<int> nums);
 const bool is_everywhere(const std::vector<int> nums, const int val);
+const bool either24(const std::vector<int> nums);
 #endif // MAIN_H
