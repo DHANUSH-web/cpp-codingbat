@@ -140,7 +140,7 @@ TEST(FizzArray, CodingBat) {
     const std::vector<int> TEST1 = fizz_array(4);
     const std::vector<int> TEST2 = fizz_array(1);
     const std::vector<int> TEST3 = fizz_array(10);
-    
+
     const std::vector<int> TEST_ARR1 = {0, 1, 2, 3, 4};
     const std::vector<int> TEST_ARR2 = {0};
     const std::vector<int> TEST_ARR3 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -224,11 +224,21 @@ TEST(MatchUp, CodingBat) {
 
     const std::vector<int> TEST_ARR21 = {1, 2, 3};
     const std::vector<int> TEST_ARR22 = {2, 3, 5};
-    
+
     const std::vector<int> TEST_ARR31 = {1, 2, 3};
     const std::vector<int> TEST_ARR32 = {2, 3, 3};
 
     EXPECT_EQ(match_up(TEST_ARR11, TEST_ARR12), 2);
     EXPECT_EQ(match_up(TEST_ARR21, TEST_ARR22), 3);
     EXPECT_EQ(match_up(TEST_ARR31, TEST_ARR32), 2);
+}
+
+TEST(Has77, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {1, 7, 7};
+    const std::vector<int> TEST_ARR2 = {1, 7, 1, 7};
+    const std::vector<int> TEST_ARR3 = {1, 7, 1, 1, 7};
+
+    EXPECT_TRUE(has77(TEST_ARR1));
+    EXPECT_TRUE(has77(TEST_ARR2));
+    EXPECT_FALSE(has77(TEST_ARR3));
 }

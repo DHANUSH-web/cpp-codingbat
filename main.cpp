@@ -173,6 +173,15 @@ const int match_up(const std::vector<int> nums1, const std::vector<int> nums2)
   return count;
 }
 
+const bool has77(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size() - 2; i++)
+    if ((nums.at(i) == 7 && (nums.at(i+1) == 7 || nums.at(i+2) == 7)) || (nums.at(i+1) == 7 && nums.at(i+2) == 7))
+      return true;
+
+  return false;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
