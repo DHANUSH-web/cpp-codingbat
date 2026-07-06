@@ -242,3 +242,15 @@ TEST(Has77, CodingBat) {
     EXPECT_TRUE(has77(TEST_ARR2));
     EXPECT_FALSE(has77(TEST_ARR3));
 }
+
+TEST(Has12, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {1, 3, 2};
+    const std::vector<int> TEST_ARR2 = {1, 2, 3};
+    const std::vector<int> TEST_ARR3 = {1, 3, 2, 1, 7};
+    const std::vector<int> TEST_ARR4 = {1};
+
+    EXPECT_TRUE(has12(TEST_ARR1));
+    EXPECT_TRUE(has12(TEST_ARR2));
+    EXPECT_TRUE(has12(TEST_ARR3));
+    EXPECT_FALSE(has12(TEST_ARR4));
+}

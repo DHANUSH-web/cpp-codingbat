@@ -182,6 +182,22 @@ const bool has77(const std::vector<int> nums)
   return false;
 }
 
+const bool has12(const std::vector<int> nums)
+{
+  bool found = false;
+
+  for (int i = 0; i < nums.size(); i++)
+  {
+    if (nums[i] == 1 && !found)
+      found = true;
+
+    if (nums[i] == 2 && found)
+      return true;
+  }
+
+  return false;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";
