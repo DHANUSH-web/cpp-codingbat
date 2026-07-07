@@ -198,6 +198,25 @@ const bool has12(const std::vector<int> nums)
   return false;
 }
 
+const bool mod_three(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size()-2; i++)
+  {
+    if ((
+      nums.at(i)    % 2 == 0 &&
+      nums.at(i+1)  % 2 == 0 &&
+      nums.at(i+2)  % 2 == 0
+    ) || (
+      nums.at(i)    % 2 == 1 &&
+      nums.at(i+1)  % 2 == 1 &&
+      nums.at(i+2)  % 2 == 1
+    ))
+      return true;
+  }
+
+  return false;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";

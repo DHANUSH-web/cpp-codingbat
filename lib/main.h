@@ -24,4 +24,5 @@ const bool either24(const std::vector<int> nums);
 const int match_up(const std::vector<int> nums1, const std::vector<int> nums2);
 const bool has77(const std::vector<int> nums);
 const bool has12(const std::vector<int> nums);
+const bool mod_three(const std::vector<int> nums);
 #endif // MAIN_H
