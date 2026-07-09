@@ -34,7 +34,13 @@ This repository contains starter code and resources for C++ programming. It is d
    - Configure CMake with the default preset
    - Build the project
    - Runs the executable
-4. Clean the project
+4. Run unit tests (GoogleTest):
+    ```bash
+    ./build test            # runs tests in debug by default [RECOMMENDED]
+    ./build test --debug    # runs tests in debug preset
+    ./build test --release  # runs tests in release preset
+    ```
+5. Clean the project
     ```bash
     ./build clean           # cleans the entire build [RECOMMENDED]
     ./build clean --debug   # cleans only debug build

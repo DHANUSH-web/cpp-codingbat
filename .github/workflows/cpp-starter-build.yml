@@ -1,0 +1,27 @@
+name: C++ Starter - CI
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dev tools
+      run: sudo apt install gcc g++ cmake make -y
+    - name: Change file permission
+      run: chmod +x build
+    - name: Build debug preset
+      run: ./build build --debug
+    - name: Build release preset
+      run: ./build build --release
+    - name: Clean logs
+      run: rm -rf logs
+    - name: Clean build
+      run: ./build clean
