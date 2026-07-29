@@ -217,6 +217,25 @@ const bool mod_three(const std::vector<int> nums)
   return false;
 }
 
+const bool have_three(const std::vector<int> nums)
+{
+  int count = 0;
+
+  for (int i = 0; i < nums.size()-1; i++)
+  {
+    if (nums.at(i) == 3 AND nums.at(i+1) != 3)
+      count++;
+    
+    if (nums.at(i) == 3 AND nums.at(i+1) == 3)
+      return false;
+  }
+
+  if (nums.size() > 2 AND nums.at(nums.size()-1) == 3 AND nums.at(nums.size()-2) != 3)
+    count++;
+
+  return count == 3;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";

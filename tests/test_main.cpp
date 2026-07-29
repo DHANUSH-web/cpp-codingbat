@@ -264,3 +264,13 @@ TEST(ModThree, CodingBat) {
     EXPECT_FALSE(mod_three(TEST_ARR2));
     EXPECT_TRUE(mod_three(TEST_ARR3));
 }
+
+TEST(HaveThree, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {3, 1, 3, 1, 3};
+    const std::vector<int> TEST_ARR2 = {3, 1, 3, 3};
+    const std::vector<int> TEST_ARR3 = {3, 4, 3, 3, 4};
+
+    EXPECT_TRUE(have_three(TEST_ARR1));
+    EXPECT_FALSE(have_three(TEST_ARR2));
+    EXPECT_FALSE(have_three(TEST_ARR3));
+}
