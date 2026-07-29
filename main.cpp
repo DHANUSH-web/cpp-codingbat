@@ -3,15 +3,15 @@
 #include <vector>
 
 const int tea_party(const int tea, const int candy) {
-  return (tea < 5 || candy < 5)                   ? 0
-         : (tea >= candy * 2 || candy >= tea * 2) ? 2
+  return (tea < 5 OR candy < 5)                   ? 0
+         : (tea >= candy * 2 OR candy >= tea * 2) ? 2
                                                   : 1;
 }
 
 const std::string fizz_string(const std::string str) {
   int size = str.size();
 
-  if (str[0] == 'f' && str[size - 1] == 'b')
+  if (str[0] == 'f' AND str[size - 1] == 'b')
     return "FizzBuzz";
   if (str[0] == 'f')
     return "Fizz";
@@ -22,7 +22,7 @@ const std::string fizz_string(const std::string str) {
 }
 
 const std::string fizz_string2(const int n) {
-  if (n % 3 == 0 && n % 5 == 0)
+  if (n % 3 == 0 AND n % 5 == 0)
     return "FizzBuzz!";
   if (n % 3 == 0)
     return "Fizz!";
@@ -33,7 +33,7 @@ const std::string fizz_string2(const int n) {
 }
 
 const bool two_as_one(const int a, const int b, const int c) {
-  return a + b == c || a + c == b || b + c == a;
+  return a + b == c OR a + c == b OR b + c == a;
 }
 
 const int sum67(std::vector<int> nums)
@@ -46,7 +46,7 @@ const int sum67(std::vector<int> nums)
   for (it = nums.begin(); it != nums.end(); it++)
   {
     if (*it == 6) skip = true;
-    else if (*it == 7 && skip) skip = false;
+    else if (*it == 7 AND skip) skip = false;
     else if (!skip) sum += *it;
   }
 
@@ -56,7 +56,7 @@ const int sum67(std::vector<int> nums)
 const bool has22(const std::vector<int> nums)
 {
   for (int i = 0; i < nums.size()-1; i++)
-    if (nums.at(i) == 2 && nums.at(i+1) == 2)
+    if (nums.at(i) == 2 AND nums.at(i+1) == 2)
       return true;
   return false;
 }
@@ -64,7 +64,7 @@ const bool has22(const std::vector<int> nums)
 const bool lucky13(const std::vector<int> nums)
 {
   for (int i = 0; i < nums.size(); i++)
-    if (nums.at(i) == 1 || nums.at(i) == 3)
+    if (nums.at(i) == 1 OR nums.at(i) == 3)
       return false;
 
   return true;
@@ -107,7 +107,7 @@ const std::vector<int> fizz_array(const int n)
 const bool only14(const std::vector<int> nums)
 {
   for (int i = 0; i < nums.size(); i++)
-    if (nums.at(i) != 1 && nums.at(i) != 4)
+    if (nums.at(i) != 1 AND nums.at(i) != 4)
       return false;
 
   return true;
@@ -132,16 +132,16 @@ const bool no14(const std::vector<int> nums)
   {
     if (nums.at(i) == 1) has1 = true;
     if (nums.at(i) == 4) has4 = true;
-    if (has1 && has4) return false;
+    if (has1 AND has4) return false;
   }
 
-  return !(has1 && has4);
+  return !(has1 AND has4);
 }
 
 const bool is_everywhere(const std::vector<int> nums, const int val)
 {
   for (int i = 0; i < nums.size()-1; i++)
-    if (nums.at(i) != val && nums.at(i+1) != val)
+    if (nums.at(i) != val AND nums.at(i+1) != val)
       return false;
 
   return true;
@@ -154,9 +154,9 @@ const bool either24(const std::vector<int> nums)
 
   for (int i = 0; i < nums.size()-1; i++)
   {
-    if (is2 && is4) return false;
-    if (nums.at(i) == 2 && nums.at(i+1) == 2) is2 = true;
-    if (nums.at(i) == 4 && nums.at(i+1) == 4) is4 = true;
+    if (is2 AND is4) return false;
+    if (nums.at(i) == 2 AND nums.at(i+1) == 2) is2 = true;
+    if (nums.at(i) == 4 AND nums.at(i+1) == 4) is4 = true;
   }
 
   return is2 != is4;
@@ -167,7 +167,7 @@ const int match_up(const std::vector<int> nums1, const std::vector<int> nums2)
   int count = 0;
 
   for (int i = 0; i < nums1.size(); i++)
-    if (nums1.at(i) != nums2.at(i) && std::abs(nums1[i] - nums2[i]) <= 2)
+    if (nums1.at(i) != nums2.at(i) AND std::abs(nums1[i] - nums2[i]) <= 2)
       count++;
 
   return count;
@@ -176,7 +176,7 @@ const int match_up(const std::vector<int> nums1, const std::vector<int> nums2)
 const bool has77(const std::vector<int> nums)
 {
   for (int i = 0; i < nums.size() - 2; i++)
-    if ((nums.at(i) == 7 && (nums.at(i+1) == 7 || nums.at(i+2) == 7)) || (nums.at(i+1) == 7 && nums.at(i+2) == 7))
+    if ((nums.at(i) == 7 AND (nums.at(i+1) == 7 OR nums.at(i+2) == 7)) OR (nums.at(i+1) == 7 AND nums.at(i+2) == 7))
       return true;
 
   return false;
@@ -188,10 +188,10 @@ const bool has12(const std::vector<int> nums)
 
   for (int i = 0; i < nums.size(); i++)
   {
-    if (nums[i] == 1 && !found)
+    if (nums[i] == 1 AND !found)
       found = true;
 
-    if (nums[i] == 2 && found)
+    if (nums[i] == 2 AND found)
       return true;
   }
 
@@ -206,7 +206,7 @@ const bool mod_three(const std::vector<int> nums)
       nums.at(i)    % 2 == 0 &&
       nums.at(i+1)  % 2 == 0 &&
       nums.at(i+2)  % 2 == 0
-    ) || (
+    ) OR (
       nums.at(i)    % 2 == 1 &&
       nums.at(i+1)  % 2 == 1 &&
       nums.at(i+2)  % 2 == 1
