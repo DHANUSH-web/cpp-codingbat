@@ -235,3 +235,13 @@ TEST(HaveThree, CodingBat) {
     EXPECT_FALSE(have_three(TEST_ARR2));
     EXPECT_FALSE(have_three(TEST_ARR3));
 }
+
+TEST(TwoTwo, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {4, 2, 2, 3};
+    const std::vector<int> TEST_ARR2 = {2, 2, 4};
+    const std::vector<int> TEST_ARR3 = {2, 2, 4, 2};
+
+    EXPECT_TRUE(two_two(TEST_ARR1));
+    EXPECT_TRUE(two_two(TEST_ARR2));
+    EXPECT_FALSE(two_two(TEST_ARR3));
+}

@@ -236,6 +236,36 @@ const bool have_three(const std::vector<int> nums)
   return count == 3;
 }
 
+const bool two_two(const std::vector<int> nums)
+{
+  if (nums.size() == 0) return true;
+  if (nums.size() == 1) return nums.at(0) != 2;
+
+  bool couple = false;
+  int count = 0;
+  bool only, both;
+
+  for (int i = 0; i < nums.size()-1; i++)
+  {
+    only = (nums.at(i) == 2 && nums.at(i+1) != 2) || (nums.at(i) != 2 && nums.at(i+1) == 2);
+    both = nums.at(i) == 2 && nums.at(i+1) == 2;
+
+    if (only)
+    {
+      couple = false;
+      count++;
+    }
+
+    if (both)
+    {
+      couple = true;
+      i++;
+    }
+  }
+
+  return couple || count == 0;
+}
+
 #ifndef TESTING
 int main() {
   std::cout << "\ntea_party:\n";

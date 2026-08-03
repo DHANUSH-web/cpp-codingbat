@@ -29,4 +29,5 @@ const bool has77(const std::vector<int> nums);
 const bool has12(const std::vector<int> nums);
 const bool mod_three(const std::vector<int> nums);
 const bool have_three(const std::vector<int> nums);
+const bool two_two(const std::vector<int> nums);
 #endif // MAIN_H
