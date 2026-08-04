@@ -1,0 +1,5 @@
+CompileFlags:
+    Add:
+        - -Iincludes
+        - -Iextras/googletest/googletest
+        - -Iextras/googletest/googletest/include
