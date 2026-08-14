@@ -3,15 +3,32 @@
 # build and run the executable
 if [[ "$1" == "run" ]]; then
     if [[ -z "$2" || "$2" == "--debug" || "$2" == "-d" ]]; then
-        ./out/debug/main 2>/dev/null || echo "Debug target not found. Run 'mac build' first"
+        ./out/debug/cpp-codingbat 2>/dev/null || echo "Debug target not found. Run 'mac build' first"
     elif [[ "$2" == "--release" || "$2" == "-r" ]]; then
-        ./out/release/main 2>/dev/null || echo "Release target not found. Run 'mac build --release' first"
+        ./out/release/cpp-codingbat 2>/dev/null || echo "Release target not found. Run 'mac build --release' first"
     else
         echo "Invalid option. Use --debug or --release."
         exit 1
     fi
 # build the executable
 elif [[ "$1" == "build" ]]; then
+    if [[ -z "$2" || "$2" == "--debug" || "$2" == "-d" ]]; then
+        cmake --preset debug
+        cmake --build out/debug
+    elif [[ "$2" == "--release" || "$2" == "-r" ]]; then
+        cmake --preset release
+        cmake --build out/release
+    elif [[ "$2" == "--all" || "$2" == "-a" ]]; then
+        # Build for debug
+        ./build build-raw -d
+
+        # Build for release
+        ./build build-raw -r
+    else
+        echo "Invalid option. Use --debug or --release or --all."
+        exit 1
+    fi
+elif [[ "$1" == "build-raw" ]]; then
     if [[ -z "$2" || "$2" == "--debug" || "$2" == "-d" ]]; then
         mkdir -p out/debug
 
@@ -20,7 +37,7 @@ elif [[ "$1" == "build" ]]; then
         -std=c++17 \
         -Iincludes \
         $(find src -name "*.cpp") \
-        -o out/debug/main
+        -o out/debug/cpp-codingbat
 
         # build test target
         clang++ \
@@ -31,7 +48,7 @@ elif [[ "$1" == "build" ]]; then
             $(find tests -name "*.cpp") \
             src/core.cpp \
             extras/googletest/googletest/src/gtest-all.cc \
-            -pthread -o out/debug/test_main
+            -pthread -o out/debug/cpp-codingbat-tests
     elif [[ "$2" == "--release" || "$2" == "-r" ]]; then
         mkdir -p out/release
 
@@ -41,7 +58,7 @@ elif [[ "$1" == "build" ]]; then
         -std=c++17 \
         -Iincludes \
         $(find src -name "*.cpp") \
-        -o out/release/main
+        -o out/release/cpp-codingbat
 
         # build test target
         clang++ \
@@ -53,7 +70,7 @@ elif [[ "$1" == "build" ]]; then
             $(find tests -name "*.cpp") \
             src/core.cpp \
             extras/googletest/googletest/src/gtest-all.cc \
-            -pthread -o out/release/test_main
+            -pthread -o out/release/cpp-codingbat-tests
     elif [[ "$2" == "--all" || "$2" == "-a" ]]; then
         # Build for debug
         ./build build -d
@@ -64,12 +81,11 @@ elif [[ "$1" == "build" ]]; then
         echo "Invalid option. Use --debug or --release or --all."
         exit 1
     fi
-# unittest
 elif [[ "$1" == "test" ]]; then
     if [[ -z "$2" || "$2" == "--debug" || "$2" == "-d" ]]; then
-        ./out/debug/test_main 2>/dev/null || echo "Debug test target not found. Run 'mac build' first"
+        ./out/debug/cpp-codingbat-tests 2>/dev/null || echo "Debug test target not found. Run 'mac build' first"
     elif [[ "$2" == "--release" || "$2" == "-r" ]]; then
-        ./out/release/test_main 2>/dev/null || echo "Release test target not found. Run 'mac build --release' first"
+        ./out/release/cpp-codingbat-tests 2>/dev/null || echo "Release test target not found. Run 'mac build --release' first"
     else
         echo "No test target found!!"
         exit 1;
