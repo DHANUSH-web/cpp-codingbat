@@ -30,5 +30,6 @@ bool has12(const std::vector<int> nums);
 bool mod_three(const std::vector<int> nums);
 bool have_three(const std::vector<int> nums);
 bool two_two(const std::vector<int> nums);
+bool same_ends(const std::vector<int> nums, int len);
 
 #endif // CXX_CODINGBAT_INCLUDES_CORE_HPP
