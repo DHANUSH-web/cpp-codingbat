@@ -274,3 +274,14 @@ bool same_ends(const std::vector<int> nums, int len)
 
   return true;
 }
+
+bool triple_up(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size()-2; i++)
+  {
+    if (nums[i+1] == nums[i] + 1 && nums[i+2] == nums[i] + 2)
+      return true;
+  }
+
+  return false;
+}
