@@ -245,3 +245,21 @@ TEST(TwoTwo, CodingBat) {
     EXPECT_TRUE(two_two(TEST_ARR2));
     EXPECT_FALSE(two_two(TEST_ARR3));
 }
+
+TEST(SameEnds, CodingBat) {
+    const std::vector<int> TEST_ARR = {4, 2, 2, 3, 5, 4, 2};
+
+    EXPECT_FALSE(same_ends(TEST_ARR, 1));
+    EXPECT_TRUE(same_ends(TEST_ARR, 2));
+    EXPECT_FALSE(same_ends(TEST_ARR, 3));
+}
+
+TEST(TripleUp, CodingBat) {
+    const std::vector<int> TEST_ARR1 = {1, 4, 5, 6, 2};
+    const std::vector<int> TEST_ARR2 = {1, 2, 3};
+    const std::vector<int> TEST_ARR3 = {1, 2, 4};
+
+    EXPECT_TRUE(triple_up(TEST_ARR1));
+    EXPECT_TRUE(triple_up(TEST_ARR2));
+    EXPECT_FALSE(triple_up(TEST_ARR3));
+}

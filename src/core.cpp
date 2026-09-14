@@ -265,3 +265,23 @@ bool two_two(const std::vector<int> nums)
 
   return couple || count == 0;
 }
+
+bool same_ends(const std::vector<int> nums, int len)
+{
+  for (int i = 0; i < len; i++)
+    if (nums[i] != nums[nums.size() - len + i])
+      return false;
+
+  return true;
+}
+
+bool triple_up(const std::vector<int> nums)
+{
+  for (int i = 0; i < nums.size()-2; i++)
+  {
+    if (nums[i+1] == nums[i] + 1 && nums[i+2] == nums[i] + 2)
+      return true;
+  }
+
+  return false;
+}
