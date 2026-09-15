@@ -263,3 +263,31 @@ TEST(TripleUp, CodingBat) {
     EXPECT_TRUE(triple_up(TEST_ARR2));
     EXPECT_FALSE(triple_up(TEST_ARR3));
 }
+
+TEST(FizzArray3, CodingBat)
+{
+    const std::vector<int> TEST_ARR1 = {5, 6, 7, 8, 9};
+    const std::vector<int> TEST_ARR2 = {11, 12, 13, 14, 15, 16, 17};
+    const std::vector<int> TEST_ARR3 = {1, 2};
+
+    std::vector<int> TEST1 = fizz_array3(5, 10);
+    std::vector<int> TEST2 = fizz_array3(11, 18);
+    std::vector<int> TEST3 = fizz_array3(1, 3);
+
+    // TEST SIZES
+    EXPECT_EQ(TEST_ARR1.size(), TEST1.size());
+    EXPECT_EQ(TEST_ARR2.size(), TEST2.size());
+    EXPECT_EQ(TEST_ARR3.size(), TEST3.size());
+
+    // CASE #1
+    for (int i = 0; i < TEST_ARR1.size(); i++)
+        EXPECT_EQ(TEST_ARR1[i], TEST1[i]);
+
+    // CASE #2
+    for (int i = 0; i < TEST_ARR2.size(); i++)
+        EXPECT_EQ(TEST_ARR2[i], TEST2[i]);
+
+    // CASE #3
+    for (int i = 0; i < TEST_ARR3.size(); i++)
+        EXPECT_EQ(TEST_ARR3[i], TEST3[i]);
+}

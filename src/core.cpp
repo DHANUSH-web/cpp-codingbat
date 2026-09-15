@@ -285,3 +285,13 @@ bool triple_up(const std::vector<int> nums)
 
   return false;
 }
+
+std::vector<int> fizz_array3(const int start, const int end)
+{
+  std::vector<int> arr;
+
+  for (int i = start; i < end; i++)
+    arr.push_back(i);
+
+  return arr;
+}
