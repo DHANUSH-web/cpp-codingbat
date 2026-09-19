@@ -295,3 +295,17 @@ std::vector<int> fizz_array3(const int start, const int end)
 
   return arr;
 }
+
+std::vector<int> shift_left(std::vector<int> nums)
+{
+  if (nums.size() <= 1) return nums;
+
+  int temp = nums.at(0);
+
+  for (int i = 1; i < nums.size(); i++)
+    nums[i-1] = nums[i];
+
+  nums[nums.size()-1] = temp;
+
+  return nums;
+}

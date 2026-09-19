@@ -33,5 +33,6 @@ bool two_two(const std::vector<int> nums);
 bool same_ends(const std::vector<int> nums, int len);
 bool triple_up(const std::vector<int> nums);
 std::vector<int> fizz_array3(const int start, const int end);
+std::vector<int> shift_left(std::vector<int> nums);
 
 #endif // CXX_CODINGBAT_INCLUDES_CORE_HPP

@@ -291,3 +291,27 @@ TEST(FizzArray3, CodingBat)
     for (int i = 0; i < TEST_ARR3.size(); i++)
         EXPECT_EQ(TEST_ARR3[i], TEST3[i]);
 }
+
+TEST(ShiftLeft, CodingBat)
+{
+    std::vector<int> TEST_ARR1 = {5, 1, 2, 3, 4};
+    std::vector<int> TEST_ARR2 = {1, 2};
+    std::vector<int> TEST_ARR3 = {1};
+
+    std::vector<int> EXP1 = {1, 2, 3, 4, 5};
+    std::vector<int> EXP2 = {2, 1};
+    std::vector<int> EXP3 = {1};
+
+    std::vector<int> TEST1 = shift_left(TEST_ARR1);
+    std::vector<int> TEST2 = shift_left(TEST_ARR2);
+    std::vector<int> TEST3 = shift_left(TEST_ARR3);
+
+    for (int i = 0; i < TEST_ARR1.size(); i++)
+        EXPECT_EQ(EXP1.at(i), TEST1.at(i));
+    
+    for (int i = 0; i < TEST_ARR2.size(); i++)
+        EXPECT_EQ(EXP2.at(i), TEST2.at(i));
+
+    for (int i = 0; i < TEST_ARR3.size(); i++)
+        EXPECT_EQ(EXP3.at(i), TEST3.at(i));
+}
